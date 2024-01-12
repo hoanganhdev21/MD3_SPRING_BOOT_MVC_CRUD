@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Categoty_Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h2{
+            font-weight: 600;
+            font-size: 2.4em;
+        }
+        .shimmer {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+
+        .shimmer {
+            text-align: center;
+            color: rgba(255,255,255,0.1);
+
+            background: #ed8080; /* Old browsers */
+            background: -moz-linear-gradient(left,  #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ed8080), color-stop(16%,#2a77d6), color-stop(32%,#5eb524), color-stop(48%,#eacd25), color-stop(64%,#ed8080), color-stop(80%,#2a77d6), color-stop(100%,#5eb524)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left,  #ed8080 0%,#2a77d6 16%,#5eb524 32%,#eacd25 48%,#ed8080 64%,#2a77d6 80%,#5eb524 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left,  #ed8080 0%,#2a77d6 16%,#5eb524 32%,#eacd25 48%,#ed8080 64%,#2a77d6 80%,#5eb524 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(left,  #ed8080 0%,#2a77d6 16%,#5eb524 32%,#eacd25 48%,#ed8080 64%,#2a77d6 80%,#5eb524 100%); /* IE10+ */
+            background: linear-gradient(to right,  #ed8080 0%,#2a77d6 16%,#5eb524 32%,#eacd25 48%,#ed8080 64%,#2a77d6 80%,#5eb524 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed8080', endColorstr='#5eb524',GradientType=1 ); /* IE6-9 */
+
+            -webkit-background-size: 300% 300%;
+            -moz-background-size: 300% 300%;
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            animation:shimmer infinite 3s linear;
+            -o-animation:shimmer infinite 3s linear;
+            -moz-animation:shimmer infinite 3s linear;
+            -webkit-animation:shimmer infinite 3s linear;
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-color: #222;
+        }
+        @-moz-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+        @-webkit-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+        @-o-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel-heading mt-5">
+                <h2 class="text-center shimmer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-activity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-activity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                    </svg>
+                    LIST OF CATEGORIES
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-activity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-activity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                    </svg>
+                </h2>
+            </div>
+            <table class="table mt-1">
+                <thead>
+                <tr>
+                    <th class="text-center border bg-primary text-white">STT</th>
+                    <th class="text-center border bg-primary text-white">Name</th>
+                    <th class="text-center border bg-primary text-white">Status</th>
+                    <th class="text-center border bg-primary text-white">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="item,index : ${list}">
+                    <td class="text-center border align-middle" th:text="${index.count}"></td>
+                    <td class="text-center border align-middle" th:text="${item.categoryName}"></td>
+                    <td class="text-center border align-middle" th:text="${item.status ? 'Active' : 'Unactive'}"></td>
+                    <td class="text-center border align-middle">
+                        <a class="btn btn-success font-weight-bold m-1" th:href="@{/edit/{id}(id=${item.id})}" role="button"
+                           data-mbd-ripple-init>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+                            </svg>
+                            Edit
+                        </a>
+                        <a class="btn btn-danger font-weight-bold m-1" th:href="@{/delete/{id}(id=${item.id})}" role="button"
+                           data-mbd-ripple-init>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+                <a name="" id="" class="center-vertical btn btn-info mb-2 mt-5 font-weight-bold" href="/add-category" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-file-earmark-plus mr-1" viewBox="0 0 16 16">
+                        <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"/>
+                        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                    </svg>
+                    New Add Category</a>
+                <a class="btn btn-outline-info mb-2 mt-5 ml-2 font-weight-bold" href="/home" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-return-right mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"/>
+                    </svg>
+                    Home</a>
+                <a class="btn btn-outline-info mb-2 mt-5 ml-2 font-weight-bold" href="/product" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-return-right mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"/>
+                    </svg>
+                    Product</a>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

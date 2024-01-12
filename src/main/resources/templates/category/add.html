@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category_Add</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h2{
+            font-weight: 600;
+            font-size: 2.4em;
+        }
+        .shimmer {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+
+        .shimmer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.1);
+
+            background: #ed8080; /* Old browsers */
+            background: -moz-linear-gradient(left, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ed8080), color-stop(16%, #2a77d6), color-stop(32%, #5eb524), color-stop(48%, #eacd25), color-stop(64%, #ed8080), color-stop(80%, #2a77d6), color-stop(100%, #5eb524)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(left, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* IE10+ */
+            background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed8080', endColorstr='#5eb524', GradientType=1); /* IE6-9 */
+
+            -webkit-background-size: 300% 300%;
+            -moz-background-size: 300% 300%;
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            animation: shimmer infinite 3s linear;
+            -o-animation: shimmer infinite 3s linear;
+            -moz-animation: shimmer infinite 3s linear;
+            -webkit-animation: shimmer infinite 3s linear;
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-color: #222;
+        }
+
+        @-moz-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+
+        @-webkit-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+
+        @-o-keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right;
+            }
+        }
+
+        input {
+            outline: none;
+            outline-offset: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading mt-5">
+                    <h2 class="text-center shimmer">ADD NEW CATEGORIES</h2>
+                </div>
+                <form action="/add-category" method="post" th:object="${category}">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="shimmer">Name:</label>
+                            <input type="text" class="form-control" th:field="*{categoryName}" id="user"/>
+                        </div>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-outline-warning active">
+                                <input type="radio" th:field="*{status}" id="" value="0"> Unactive
+                            </label>
+                            <label class="btn btn-outline-success">
+                                <input type="radio" th:field="*{status}" value="1" checked="checked"> Active
+                            </label>
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success font-weight-bold">
+                        Submit
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/>
+                        </svg>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
