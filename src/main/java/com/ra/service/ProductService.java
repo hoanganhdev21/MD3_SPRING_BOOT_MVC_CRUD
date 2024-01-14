@@ -10,3 +10,5 @@ public interface ProductService {
     Product findById(Long id);
     void delete(Long id);
 }
+
+// => Tương tự như bên category => Đổi thành product

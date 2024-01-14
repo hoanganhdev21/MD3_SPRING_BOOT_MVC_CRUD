@@ -33,3 +33,5 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 }
+
+// => Tương tự như bên category => Đổi thành product
